@@ -6,7 +6,6 @@ const CardList = ({ combos }) => {
 
     return (
         <>
-            <h2>Combos</h2>
             <Grid container>
                 {
                     combos.map(({title, price, image, id, stock}) => {

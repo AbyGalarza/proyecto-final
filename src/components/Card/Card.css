@@ -18,3 +18,16 @@ img{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+Button.button{
+    background-color: #ffb5cc;
+    color: black;
+    border-radius: 20px;
+    border: 1px solid #ffb5cc;
+    text-decoration: none;
+}
+
+Link.btn-dtl{
+    text-decoration: none;
+    color: #ffb5cc;
+}
+

@@ -28,10 +28,10 @@ const CardItem = ({image, title, price, id}) => {
                         <p>${price}</p>
                         <div className="item-count">
                             <ItemCount/>
-                            <Button onClick={()=>addProductToCart({image, title, price, id})}>Agregar al carrito</Button>
+                            <Button className="button" onClick={()=>addProductToCart({image, title, price, id})}>Agregar al carrito</Button>
                         </div>
-                        <Button variant={'contained'} className="button">
-                        <Link to={`/product/${id}`}>Detalle</Link>
+                        <Button className="button">
+                        <Link className="btn-dtl" to={`/product/${id}`}>Detalle</Link>
                         </Button>
                     </div>
                 </CardContent>
