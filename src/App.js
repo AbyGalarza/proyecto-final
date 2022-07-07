@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import NavBar from './components/NavBar/NavBar';
 import './App.css';
+import CardListContainer from './components/CardListContainer/CardListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Pages/Home';
+import Contacto from './components/Pages/Contacto';
+import Detalle from './components/Pages/Detalle';
+import ProductList from './components/Pages/ProductList';
+import Cart from './components/Pages/Cart';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/contact' element={<Contacto />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/products/:category' element={<ProductList />} />
+            <Route path='/product/:id' element={<Detalle />} />
+            <Route path='*' element={<h1>404 - Página no encontrada </h1>} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

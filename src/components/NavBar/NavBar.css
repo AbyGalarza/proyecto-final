@@ -1,0 +1,33 @@
+.color{
+    background-color: rgb(255, 245, 255);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: #ccc;
+    border-radius: 20px;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+.container-logo{
+    width: 9%;
+}
+
+.container-logo img{
+    width: 100%;
+}
+
+.header-primary .navbar .navbar__btn{
+    text-transform: none;
+    font-size: 16px;
+    color: black;
+}
+
+.header-primary .navbar .navbar__btn:hover{
+    font-weight: 550;
+}

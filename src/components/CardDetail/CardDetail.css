@@ -1,0 +1,21 @@
+.card-item-img{
+    width: 100%;
+}
+
+.card-item-detail{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+.card-item-detail p{
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
+
+.card-item-detail span{
+    margin-bottom: 10px;
+    font-size: 21px;
+}
