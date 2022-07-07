@@ -3,10 +3,12 @@ import { Button } from "@mui/material";
 import './CardDetail.css';
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
 const CardDetail = ({ data }) => {
     const [cantidad, setCantidad] = useState(1)
     const [showButton, setShowButton] = useState(false)
+    
 
     const addToCart = ()=>{
         console.log("se agregó:", data)
@@ -24,6 +26,7 @@ const CardDetail = ({ data }) => {
             <Button variant="outlined">
                 <Link to='/cart'>Checkout</Link>
             </Button>}
+            <ButtonAdd/>
         </div >
     )
 }
