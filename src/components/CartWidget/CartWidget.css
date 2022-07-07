@@ -2,3 +2,42 @@
     color: #ffb5cc;
     margin-left: 43%;
 }
+
+.container-item-list-cart{
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+}
+
+.container-item-list-cart p{
+    text-align: center;
+}
+
+.item-cart-prod{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: bisque;
+}
+
+.cart-prod__image{
+    display: flex;
+    justify-content: center;
+}
+
+.item-cart-prod img{
+    width: 25%;
+}
+
+.cart-prod__info{
+    text-align: center;
+    font-size: 15px;
+}
+
+.cart-checkout-details button {
+    background: #ffb5cc;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 14px;
+}

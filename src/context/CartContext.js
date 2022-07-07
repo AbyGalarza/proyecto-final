@@ -8,18 +8,22 @@ const CartProvider = ({children})=>{
 
     const addProductToCart = (product)=>{
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
-        console.log("está?", isInCart)
         if(!isInCart) {
         setTotalPrice(totalPrice + product.price)
         return setCartListItems(cartListItems => [...cartListItems, product])
     }
         console.log("producto en carrito")
     }
+
+    const deleteProduct = (product) => {
+        setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== product.id) )
+    }
     
     const data = {
         cartListItems,
         addProductToCart,
-        totalPrice
+        totalPrice,
+        deleteProduct
     }
 
     return(

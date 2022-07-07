@@ -30,7 +30,7 @@ const ProductList = () => {
         console.log()
         getProductsFirebase()
         .then((productos)=>{
-            console.log("xfa", productos)
+            console.log("Productos", productos)
             category ? filterByCategory(productos, category) : setProducts(productos)
         })
 
@@ -44,7 +44,7 @@ const ProductList = () => {
             product.id = doc.id
             return product
         })
-        console.log("?",productList)
+        console.log("ProductList",productList)
     }
 
     const filterByCategory = (array) => {
