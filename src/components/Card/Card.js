@@ -22,7 +22,7 @@ const CardItem = ({image, title, price, id}) => {
     return (
         <>
             <Card sx={{ minWidth: 275 }}>
-                <CardContent>
+                <CardContent className="card-content">
                     <div className="card">
                         <img src={`/${image}`} alt="Combo1" />
                         <h2>{title}</h2>
@@ -30,7 +30,6 @@ const CardItem = ({image, title, price, id}) => {
                         <div className="item-count">
                             <ItemCount/>
                             <Button className="button" onClick={()=>addProductToCart({image, title, price, id})}>Agregar al carrito</Button>
-                            <ButtonAdd/>
                         </div>
                         <Button className="button">
                         <Link className="btn-dtl" to={`/product/${id}`}>Detalle</Link>
