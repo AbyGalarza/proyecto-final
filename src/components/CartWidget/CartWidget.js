@@ -54,7 +54,7 @@ const CartWidget = () => {
                                 </div>
                                 <div className='cart-prod__action'>
                                     <button onClick={() => deleteProduct(item)}>
-                                        <DeleteIcon />
+                                        <DeleteIcon className='delete' />
                                     </button>
                                 </div>
                                 <div className='cart-checkout-details'>

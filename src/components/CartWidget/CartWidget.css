@@ -40,4 +40,15 @@
     padding: 10px 20px;
     margin-top: 15px;
     font-size: 14px;
+
+}
+
+.cart-checkout-details{
+    display: flex;
+    justify-content: center;
+}
+
+.cart-prod__action{
+    display: flex;
+    justify-content: center;
 }

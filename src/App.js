@@ -9,6 +9,7 @@ import Detalle from './components/Pages/Detalle';
 import ProductList from './components/Pages/ProductList';
 import Cart from './components/Pages/Cart';
 import { CartProvider } from './context/CartContext';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/product/:id' element={<Detalle />} />
             <Route path='*' element={<h1>404 - Página no encontrada </h1>} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </CartProvider>
     </div>

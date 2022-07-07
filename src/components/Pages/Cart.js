@@ -5,6 +5,7 @@ import CartContext from "../../context/CartContext"
 import { Delete } from "@mui/icons-material"
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import './Cart.css'
 
 const Cart = () => {
     const { cartListItems, totalPrice } = useContext(CartContext)
@@ -65,7 +66,7 @@ const Cart = () => {
             {cartListItems.map((item)=> {
                 const {id, title, image, price} = item
                 return(
-                    <div className='cart-table__content' key={id}>
+                    <div className='container-general-cart' key={id}>
                     <div className='cart-table__content-img'>
                         <img src={`/${image}`} />
                     </div>
@@ -87,7 +88,6 @@ const Cart = () => {
                )
             })}
             <div className='cart-footer'>
-                <Button className='btn-custom'>Continuar comprando</Button>
                 <div className='cart-checkout-details'>
                     <div className='cart-checkout__subtotal'>
                         <p>Subtotal</p>
