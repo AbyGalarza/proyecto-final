@@ -24,7 +24,6 @@ const ItemCount = ({actualizarCantidad, setShowButton})=>{
         <p>{count}</p>
         <Button onClick={addCount} disabled={count >= stock}>+</Button>
         </div>
-        <Button variant="outlined" onClick={()=>setShowButton(true)}>Agregar al carrito</Button>
         </>
     )
 }
