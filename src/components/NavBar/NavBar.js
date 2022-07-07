@@ -73,7 +73,7 @@ const NavBar = () => {
               style={{ backgroundColor: 'transparent' }}
               variant='text'
               className='navbar__btn'>
-              Preguntas Frecuentes
+              <Link to="/FAQ">Preguntas Frecuentes</Link>
             </Button>
           </li>
           <li>
@@ -82,7 +82,7 @@ const NavBar = () => {
               style={{ backgroundColor: 'transparent' }}
               variant='text'
               className='navbar__btn'>
-              Nosotros
+              <Link to="/nosotros">Nosotros</Link>
             </Button>
           </li>
           <li>
