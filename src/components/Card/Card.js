@@ -8,13 +8,11 @@ import { Button } from "@mui/material";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import CartContext from '../../context/CartContext';
-import ButtonAdd from "../ButtonAdd/ButtonAdd";
 
 const CardItem = ({image, title, price, id}) => {
     const { addProductToCart } = useContext(CartContext)
 
     const [open, setOpen] = useState(false)
-    console.log(id)
     const handleClose = () => {
         setOpen(false)
     }

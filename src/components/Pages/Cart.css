@@ -42,3 +42,20 @@
     justify-content: space-evenly;
     width: 100%;
 }
+
+.form-contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contact div{
+    margin: 1%;
+}
+
+.button{
+    background-color: #ffb5cc;
+    color: black;
+    border-radius: 20px;
+    border: 1px solid #ffb5cc;
+    text-decoration: none;
+}

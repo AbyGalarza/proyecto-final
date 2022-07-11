@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import productos from "../../utils/CombosMock";
 import { useParams } from "react-router-dom";
 import CardList from "../CardList/CardList";
 import { collection, getDocs } from 'firebase/firestore';
@@ -12,42 +11,24 @@ const ProductList = () => {
 
     useEffect(() => {
         setProducts([])
-        getProducts()
+        getProductsFirebase()
             .then((response) => {
                 filterByCategory(response)
             })
     }, [category])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            resolve(productos)
-        })
-    }
+    async function getProductsFirebase() {
+        const productosCol = collection(db, 'productos');
+        const productosSnapshot = await getDocs(productosCol);
+        const productosList = productosSnapshot.docs.map(doc => {
+            let producto = doc.data()
+            producto.id = doc.id
+            return producto
+        });
+        return productosList;
+      }
 
-    useEffect( () => {
-
-        setProducts([])
-        console.log()
-        getProductsFirebase()
-        .then((productos)=>{
-            console.log("Productos", productos)
-            category ? filterByCategory(productos, category) : setProducts(productos)
-        })
-
-
-    }, [category])
-
-    const getProductsFirebase = async () => {
-        const productSnapshot = await getDocs(collection(db, "productos"))
-        const productList = productSnapshot.docs.map((doc)=>{
-            let product = doc.data()
-            product.id = doc.id
-            return product
-        })
-        console.log("ProductList",productList)
-    }
-
-    const filterByCategory = (array) => {
+      const filterByCategory = (array) => {
         return array.map((item) => {
             if (item.category == category) {
                 return setProducts(products => [...products, item])
@@ -58,7 +39,7 @@ const ProductList = () => {
     return (
         <div className="general-container">
             <>
-                <CardList combos={products} />
+                <CardList productos={products} />
             </>
         </div>
     )

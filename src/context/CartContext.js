@@ -12,18 +12,23 @@ const CartProvider = ({children})=>{
         setTotalPrice(totalPrice + product.price)
         return setCartListItems(cartListItems => [...cartListItems, product])
     }
-        console.log("producto en carrito")
     }
 
     const deleteProduct = (product) => {
         setCartListItems(cartListItems.filter( (cartProduct) => cartProduct.id !== product.id) )
+    }
+
+    const cleanCartProducts = ()=>{
+        setCartListItems([])
+        setTotalPrice(0)
     }
     
     const data = {
         cartListItems,
         addProductToCart,
         totalPrice,
-        deleteProduct
+        deleteProduct,
+        cleanCartProducts
     }
 
     return(

@@ -1,33 +1,20 @@
-import React, { useState } from "react";
-import { Button } from "@mui/material";
+import React, { useState, useContext } from "react";
 import './CardDetail.css';
-import ItemCount from "../ItemCount/ItemCount";
-import { Link } from "react-router-dom";
 import ButtonAdd from "../ButtonAdd/ButtonAdd";
+import CartContext from "../../context/CartContext";
+
 
 const CardDetail = ({ data }) => {
+    const { addProductToCart } = useContext(CartContext)
     const [cantidad, setCantidad] = useState(1)
-    const [showButton, setShowButton] = useState(false)
     
-
-    const addToCart = ()=>{
-        console.log("se agregó:", data)
-        console.log("cantidad:", cantidad)
-    }
-
     return (
         <div className="card-item-detail">
             <img className="card-item-img" src={`../${data.image}`} alt="products-img" />
             <h2>{data.title}</h2>
             <span>$ {data.price}</span>
-            {!showButton ?
-            <ItemCount actualizarCantidad={setCantidad} setShowButton={setShowButton}/>
-            :
-            <Button variant="outlined">
-                <Link to='/cart'>Checkout</Link>
-            </Button>}
             <ButtonAdd/>
-        </div >
+        </div>
     )
 }
 
